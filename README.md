@@ -64,9 +64,9 @@ Don't create a new user. Do this post-installation.
 neofetch
 man-pages man-db texinfo
 git base-devel
-nvim zsh rsync htop 
+nvim zsh rsync htop
 ttf-inconsolata ttf-libertine
-arandr
+arandr zip unzip gnupg
 
 
 [xorg and graphics drivers]
@@ -188,32 +188,3 @@ https://stackoverflow.com/questions/4468447/how-to-download-source-code-with-pac
 https://www.baeldung.com/linux/vim-vs-neovim
 
 https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
