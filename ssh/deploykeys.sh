@@ -10,6 +10,7 @@
 # zip -r --encrypt encrypted_archive.zip dir_to_encrypt
 # zip -r --encrypt encrypted_archive.zip file_or_files_to_encrypt
 
+WD=$(pwd)
 PRIVATEKEY_DECRYPTED=id_ed25519
 PRIVATEKEY_ENCRYPTED=id_ed25519.gpg
 PUBLICKEY=id_ed25519.pub
@@ -20,19 +21,23 @@ echo "SSH key deployment script."
 echo "NOTE that it is better to have a key with a passphrate"
 echo "Implement this in the future"
 echo "Ensure openssh is installed and the ssh-agent is running"
-eval `$(ssh-agent -s)`
+eval "$(ssh-agent -s)"
 echo "[Press Enter to continue]"
 read
 
 # Decrypt key:
 echo "Decrypting $PRIVATEKEY_ENCRYPTED"
-gpg -d $PRIVATEKEY_ENCRYPTED > $PRIVATEKEY_DECRYPTED
+gpg -d $WD/$PRIVATEKEY_ENCRYPTED > $WD/$PRIVATEKEY_DECRYPTED
+
+# Fix permissions
+# https://gist.github.com/zoxon/4e0e77e3be930d286d62
+chmod 600 $WD/$PRIVATEKEY_DECRYPTED
 
 # Move keys to ~/.ssh
 echo "Moving keys to $SSH_DIR"
 mkdir -p $SSH_DIR
-cp $PUBLICKEY $SSH_DIR
-mv $PRIVATEKEY_DECRYPTED $SSH_DIR
+cp $WD/$PUBLICKEY $SSH_DIR
+mv $WD/$PRIVATEKEY_DECRYPTED $SSH_DIR
 
 # Add message to ssh-agent
 echo "Adding keys to ssh-agent"
