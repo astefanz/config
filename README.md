@@ -62,7 +62,7 @@ Don't create a new user. Do this post-installation.
 ## TO INSTALL WITH ARCHINSTALL
 # Critical
 neofetch
-man-pages man-db texinfo
+man-pages man-db texinfo openssh openssl
 git base-devel
 nvim zsh rsync htop
 ttf-inconsolata ttf-libertine
