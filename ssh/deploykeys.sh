@@ -20,7 +20,7 @@ echo "SSH key deployment script."
 echo "NOTE that it is better to have a key with a passphrate"
 echo "Implement this in the future"
 echo "Ensure openssh is installed and the ssh-agent is running"
-echo "$(ssh-agent -s)"
+eval `$(ssh-agent -s)`
 echo "[Press Enter to continue]"
 read
 
