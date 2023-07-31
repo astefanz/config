@@ -79,7 +79,15 @@ arandr zip unzip gnupg
 
 #### Create user
 
-Add to `wheel` and `docker` group
+```bash
+# Here "mango" is the username 
+useradd --create-home --shell /usr/bin/zsh --groups wheel mango
+
+# Then set mango's password with:
+passwd mango
+```
+
+Add to `wheel` and later `docker` group
 
 Make superuser
 
