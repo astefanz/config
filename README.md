@@ -85,6 +85,13 @@ useradd --create-home --shell /usr/bin/zsh --groups wheel mango
 
 # Then set mango's password with:
 passwd mango
+
+# Edit /etc/sudoers to allow all users in the wheel
+# group to use sudo
+#
+# in vim, incomment the line with the following:
+# %wheel ALL=(ALL) ALL
+vim /etc/sudoers
 ```
 
 Add to `wheel` and later `docker` group
@@ -117,10 +124,17 @@ krita blender freecad inkscape xournalpp brave [firefox or librewolf]
 ```
 
 
-
+# Things to figure out to make this usable
+- lock screen with timeout and shortcut
+- decryption screen that isn't trash with P728
+- (~) backups and data synchronization
 
 
 # Things to figure out
+
+- .vimrc and nvim packages, mine and LS
+- zsh configuration files
+- /etc/sudoers
 
 - Backups
 - Decryption and login that isn't trash
