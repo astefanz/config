@@ -1,4 +1,4 @@
-# config
+# setup
 Personal configuration files and provisioning scripts. I use Arch btw.
 
 
