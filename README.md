@@ -3,7 +3,7 @@ Personal configuration files and provisioning scripts. I use Arch btw.
 
 
 
-Inspired by [LARBS](larbs.xyz).
+Based on Arch Linux, inspired by Luke Smith's [LARBS](larbs.xyz) and heavily reliant on suckless.org.
 
 I use this repository to iterate on my computing setup.
 
