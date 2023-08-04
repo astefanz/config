@@ -116,10 +116,12 @@ archinstall arch-install-scripts pam-u2f
 [compilers]
 [extended fonts]
 
+yt-dlp ffmpeg
+
 # Software tools:
 krita blender freecad inkscape xournalpp brave [firefox or librewolf]
 [email and calendar] [music] vlc
-yt-dlp
+
 ```
 
 
