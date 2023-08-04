@@ -119,6 +119,7 @@ archinstall arch-install-scripts pam-u2f
 # Software tools:
 krita blender freecad inkscape xournalpp brave [firefox or librewolf]
 [email and calendar] [music] vlc
+yt-dlp
 ```
 
 
@@ -186,8 +187,10 @@ larbs
 ### Archiving
 - Consider `git-annex`: https://git-annex.branchable.com/install/
 - But `rsync` will probably do
+- Use Git for writing and code
+  - Overleaf supports Git integration
 
-
+- 
 
 ### Keeping source code
 
@@ -208,3 +211,22 @@ https://stackoverflow.com/questions/4468447/how-to-download-source-code-with-pac
 https://www.baeldung.com/linux/vim-vs-neovim
 
 https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+
+
+
+### Simple pomodoro timing
+
+See https://superuser.com/questions/224265/
+
+Make this into a script
+
+```bash
+# Wait 1500s (25min) and send a notification to take a break:
+sleep 1500 && notify-send "break"
+
+# Same as above but with a dialog box you have to click OK on to remove:
+sleep 1500 && zenity --warning --text="25 minutes passed"
+```
+
+
+
