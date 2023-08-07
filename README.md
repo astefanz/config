@@ -60,13 +60,32 @@ Don't create a new user. Do this post-installation.
 ## TO INSTALL WITH ARCHINSTALL
 # Critical
 neofetch
-man-pages man-db texinfo openssh openssl
+man-pages man-db texinfo openssh openssl lvm2
 git base-devel
 nvim zsh rsync htop
 zip unzip gnupg
 
 [network drivers (NetworkManager)]
 ```
+
+##### Copy `.ssh` directory for github access and import own repositories
+
+```bash
+# Put id_ed25519 and id_ed25519.pub in ~/.ssh
+
+```
+
+
+
+```bash
+# Once SSH keys have been ported over and added to the SSH agent
+git clone git@github.com:astefanz/setup.git
+git clone git@github.com:astefanz/dwm.git
+git clone git@github.com:astefanz/st.git
+git clone git@github.com:astefanz/dmenu.git
+```
+
+
 
 
 
