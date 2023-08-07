@@ -35,13 +35,28 @@ ping archlinux.org
 
 
 
-#### Confirm the clock is synchronized
+##### Confirm the clock is synchronized
 
 Will happen automatically when online
 
 ```bash
 timedatectl
 # check that the clock is synchronized
+```
+
+##### Confirm `pacman` is done initializing
+
+https://bbs.archlinux.org/viewtopic.php?id=283075
+
+This is an example way to have a provisioning script wait until the initialization is complete before trying to use `pacman` or its wrappers:
+
+```bash
+echo "waiting for pacman keyring init to be done"
+
+while ! systemctl show pacman-init.service | grep SubState=exited; do
+    systemctl --no-pager status -n0 pacman-init.service || true
+    sleep 1
+done
 ```
 
 
@@ -54,7 +69,7 @@ pacman -Sy archinstall
 
 Don't create a new user. Do this post-installation.
 
-##### Packages to install with `archinstall`
+##### Packages to install with `archinstall` (system-level)
 
 ```bash
 ## TO INSTALL WITH ARCHINSTALL
@@ -65,8 +80,25 @@ git base-devel
 nvim zsh rsync htop
 zip unzip gnupg
 
+# Graphics
+[xorg and video drivers]
+
+arandr ttf-inconsolata ttf-libertine ttf-dejavu
+libxinerama libxft # <- for dwm
+
+# Sound
+[pipewire]
+
+# Networking
 [network drivers (NetworkManager)]
+
+# For future installations
+archinstall arch-install-scripts pam-u2f
 ```
+
+
+
+### Post-installation tasks
 
 ##### Copy `.ssh` directory for github access and import own repositories
 
@@ -74,8 +106,6 @@ zip unzip gnupg
 # Put id_ed25519 and id_ed25519.pub in ~/.ssh
 
 ```
-
-
 
 ```bash
 # Once SSH keys have been ported over and added to the SSH agent
@@ -89,17 +119,28 @@ git clone git@github.com:astefanz/dmenu.git
 
 
 
-### Packages to install after
+
+
+#### Post-setup packages (user level)
 
 ```bash
-# Graphics
-arandr ttf-inconsolata ttf-libertine ttf-dejavu
-[xorg and graphics drivers]
-[touchscreen drivers]
-[audio server]
+## TO INSTALL POST INSTALLATION INTO USER
+doas [docker stuff]
+
+# Basic
+[virtualbox stuff] [jupyter and python packages]
+[latex and jupyter latex]
+
+[compilers]
+[extended fonts]
+
+yt-dlp ffmpeg
+
+# Software tools:
+krita blender freecad inkscape xournalpp brave [firefox or librewolf]
+[email and calendar] [music] vlc
+
 ```
-
-
 
 
 
@@ -128,32 +169,10 @@ Set `zsh` as shell
 
 Give it a `home` directory etc.
 
-#### Post-installation packages
-
-```bash
-## TO INSTALL POST INSTALLATION INTO USER
-doas [docker stuff]
-
-# For Arch installations:
-archinstall arch-install-scripts pam-u2f
-
-# Basic
-[virtualbox stuff] [jupyter and python packages]
-[latex and jupyter latex]
-
-[compilers]
-[extended fonts]
-
-yt-dlp ffmpeg
-
-# Software tools:
-krita blender freecad inkscape xournalpp brave [firefox or librewolf]
-[email and calendar] [music] vlc
-
-```
 
 
 # Things to figure out to make this usable
+
 - lock screen with timeout and shortcut
 - decryption screen that isn't trash with P728
 - (~) backups and data synchronization
