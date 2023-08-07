@@ -58,13 +58,21 @@ while ! systemctl show pacman-init.service | grep SubState=exited; do
     sleep 1
 done
 ```
-
+#### Update keyring
+```bash
+pacman -Sy archlinux-keyring
+```
 
 
 #### Install with `archinstall`
 
 ```bash
 pacman -Sy archinstall
+archinstall
+# Or, if you have a configuration file, like the ones
+# in this repository's archinstall/ directory
+archinstall --config user_configuration.json
+# i.e. the path to the .json file to use ^
 ```
 
 Don't create a new user. Do this post-installation.
@@ -77,7 +85,7 @@ Don't create a new user. Do this post-installation.
 neofetch
 man-pages man-db texinfo openssh openssl lvm2
 git base-devel
-nvim zsh rsync htop
+neovim zsh rsync htop
 zip unzip gnupg
 
 # Graphics
