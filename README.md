@@ -58,32 +58,39 @@ while ! systemctl show pacman-init.service | grep SubState=exited; do
     sleep 1
 done
 ```
-
+#### Update keyring
+```bash
+pacman -Sy archlinux-keyring
+```
 
 
 #### Install with `archinstall`
 
 ```bash
 pacman -Sy archinstall
+archinstall
+# Or, if you have a configuration file, like the ones
+# in this repository's archinstall/ directory
+archinstall --config user_configuration.json
+# i.e. the path to the .json file to use ^
 ```
-
-Don't create a new user. Do this post-installation.
 
 ##### Packages to install with `archinstall` (system-level)
 
 ```bash
 ## TO INSTALL WITH ARCHINSTALL
 # Critical
-neofetch
+neofetch figlet
 man-pages man-db texinfo openssh openssl lvm2
 git base-devel
-nvim zsh rsync htop
+neovim zsh rsync htop
 zip unzip gnupg
 
 # Graphics
 [xorg and video drivers]
+xorg xorg-xinit
 
-arandr ttf-inconsolata ttf-libertine ttf-dejavu
+arandr ttf-inconsolata ttf-linux-libertine ttf-dejavu
 libxinerama libxft # <- for dwm
 
 # Sound
@@ -98,7 +105,7 @@ archinstall arch-install-scripts pam-u2f
 
 
 
-### Post-installation tasks
+# Post-installation tasks
 
 ##### Copy `.ssh` directory for github access and import own repositories
 
@@ -117,7 +124,14 @@ git clone git@github.com:astefanz/dmenu.git
 
 
 
+### Setup graphical environment
+Install Xorg packages, `dwm` dependencies and fonts
+May also have been installed in the `archinstall` step
+```bash
+pacman -S xorg xorg-xinit libxinerama libxft ttf-inconsolata ttf-linux-libertine \
+    ttf-dejavu
 
+```
 
 
 
@@ -141,8 +155,11 @@ krita blender freecad inkscape xournalpp brave [firefox or librewolf]
 [email and calendar] [music] vlc
 
 ```
+## Setup scripts
+[...]
 
-
+***
+# Other stuff
 
 ### Other things
 
