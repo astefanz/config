@@ -1,5 +1,5 @@
 #!/bin/sh
-# Shorthand to save Git repository
+# qs - quicksave - Commit all and push in local git repository
 
 echo "$0: Quicksaving Git repository"
 MSG="Checkpoint"

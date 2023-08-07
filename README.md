@@ -104,7 +104,7 @@ archinstall arch-install-scripts pam-u2f
 
 ```bash
 # Put id_ed25519 and id_ed25519.pub in ~/.ssh
-
+# See ssh/deploykeys.sh in this repository
 ```
 
 ```bash
@@ -144,7 +144,9 @@ krita blender freecad inkscape xournalpp brave [firefox or librewolf]
 
 
 
-#### Create user
+### Other things
+
+#### To create an user
 
 ```bash
 # Here "mango" is the username 
