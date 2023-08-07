@@ -80,7 +80,7 @@ archinstall --config user_configuration.json
 ```bash
 ## TO INSTALL WITH ARCHINSTALL
 # Critical
-neofetch
+neofetch figlet
 man-pages man-db texinfo openssh openssl lvm2
 git base-devel
 neovim zsh rsync htop
@@ -88,6 +88,7 @@ zip unzip gnupg
 
 # Graphics
 [xorg and video drivers]
+xorg xorg-xinit
 
 arandr ttf-inconsolata ttf-linux-libertine ttf-dejavu
 libxinerama libxft # <- for dwm
@@ -104,7 +105,7 @@ archinstall arch-install-scripts pam-u2f
 
 
 
-### Post-installation tasks
+# Post-installation tasks
 
 ##### Copy `.ssh` directory for github access and import own repositories
 
@@ -123,7 +124,14 @@ git clone git@github.com:astefanz/dmenu.git
 
 
 
+### Setup graphical environment
+Install Xorg packages, `dwm` dependencies and fonts
+May also have been installed in the `archinstall` step
+```bash
+pacman -S xorg xorg-xinit libxinerama libxft ttf-inconsolata ttf-linux-libertine \
+    ttf-dejavu
 
+```
 
 
 
@@ -147,8 +155,11 @@ krita blender freecad inkscape xournalpp brave [firefox or librewolf]
 [email and calendar] [music] vlc
 
 ```
+## Setup scripts
+[...]
 
-
+***
+# Other stuff
 
 #### Create user
 
