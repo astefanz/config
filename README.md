@@ -63,15 +63,24 @@ neofetch
 man-pages man-db texinfo openssh openssl
 git base-devel
 nvim zsh rsync htop
-ttf-inconsolata ttf-libertine
-arandr zip unzip gnupg
+zip unzip gnupg
+
+[network drivers (NetworkManager)]
+```
 
 
+
+### Packages to install after
+
+```bash
+# Graphics
+arandr ttf-inconsolata ttf-libertine ttf-dejavu
 [xorg and graphics drivers]
 [touchscreen drivers]
 [audio server]
-[network drivers (NetworkManager)]
 ```
+
+
 
 
 
