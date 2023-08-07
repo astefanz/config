@@ -75,8 +75,6 @@ archinstall --config user_configuration.json
 # i.e. the path to the .json file to use ^
 ```
 
-Don't create a new user. Do this post-installation.
-
 ##### Packages to install with `archinstall` (system-level)
 
 ```bash
@@ -91,7 +89,7 @@ zip unzip gnupg
 # Graphics
 [xorg and video drivers]
 
-arandr ttf-inconsolata ttf-libertine ttf-dejavu
+arandr ttf-inconsolata ttf-linux-libertine ttf-dejavu
 libxinerama libxft # <- for dwm
 
 # Sound
