@@ -166,7 +166,7 @@ krita blender freecad inkscape xournalpp brave [firefox or librewolf]
 #### To create an user
 
 ```bash
-# Here "mango" is the username 
+# Here "mango" is the username
 useradd --create-home --shell /usr/bin/zsh --groups wheel mango
 
 # Then set mango's password with:
@@ -258,7 +258,7 @@ larbs
 - Use Git for writing and code
   - Overleaf supports Git integration
 
-- 
+-
 
 ### Keeping source code
 
@@ -296,5 +296,12 @@ sleep 1500 && notify-send "break"
 sleep 1500 && zenity --warning --text="25 minutes passed"
 ```
 
-
-
+### Remapping pen and touch sensor to laptop screen with multiple monitors
+https://askubuntu.com/questions/51445/
+```bash
+# For "dakota" Fujitsu P728
+xinput # find id of input device. For me it's 13 for pen and 9 for finger
+xrandr # find name of laptop display. For me it's eDP1
+xinput map-to-output  9 eDP1 # Fix finger touch
+xinput map-to-output 13 eDP1 # Fix pen touch
+```
