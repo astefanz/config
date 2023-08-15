@@ -143,7 +143,10 @@ doas [docker stuff]
 
 # Basic
 [virtualbox stuff] [jupyter and python packages]
-[latex and jupyter latex]
+# Latex:
+texlive-plaingeneric
+[more latex and jupyter latex]
+
 
 [compilers]
 [extended fonts]
