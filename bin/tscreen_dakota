@@ -1,0 +1,13 @@
+#!/bin/sh
+### Remapping pen and touch sensor to laptop screen with multiple monitors
+#https://askubuntu.com/questions/51445/
+# For "dakota" Fujitsu P728
+
+echo "Remapping 2-in-1 touchscreen boundaries"
+echo "Warning: hardcoded for 'dakota' Fujitsu P728"
+xinput # find id of input device. For me it's 13 for pen and 9 for finger
+xrandr # find name of laptop display. For me it's eDP1
+xinput map-to-output  9 eDP-1 # Fix finger touch
+xinput map-to-output 16 eDP-1 # Fix pen touch
+xinput map-to-output 17 eDP-1 # Fix pen touch
+echo "Done"
