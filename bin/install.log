@@ -166,3 +166,253 @@ Disk states before installing: [
         "uuid": null
     }
 ]
+Not enough permission to place log file at /var/log/archinstall/install.log, creating it in /home/mango/Dropbox/Projects/setup/bin/install.log instead
+Hardware model detected: FUJITSU LIFEBOOK P728; UEFI mode: True
+Processor model detected: Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz
+Memory statistics: 12426552 available out of 16208952 total installed
+Could not detect virtual system: ['/usr/bin/systemd-detect-virt'] exited with abnormal exit code [1]: none
+
+System is not running in a VM: ['/usr/bin/systemd-detect-virt'] exited with abnormal exit code [1]: none
+
+Virtualization detected: None; is VM: False
+Graphics devices detected: dict_keys(['Intel Corporation UHD Graphics 620 (rev 07)'])
+Disk states before installing: [
+    {
+        "children": [
+            {
+                "children": [],
+                "fsavail": 447586304,
+                "fsroots": [
+                    "."
+                ],
+                "fstype": "vfat",
+                "fsuse_percentage": "16%",
+                "fsver": "FAT32",
+                "log_sec": 512,
+                "mountpoint": "/boot",
+                "mountpoints": [
+                    "/boot"
+                ],
+                "name": "sda1",
+                "partn": 1,
+                "parttype": "c12a7328-f81f-11d2-ba4b-00a0c93ec93b",
+                "partuuid": "1608fa25-48f8-4148-8666-265e5701de2b",
+                "path": "/dev/sda1",
+                "pkname": "sda",
+                "pttype": "gpt",
+                "ptuuid": "5aff684d-d0a5-4527-ab2a-d7abecd21e8e",
+                "rota": false,
+                "size": "511 MiB",
+                "tran": null,
+                "type": "part",
+                "uuid": "979A-A850"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "fsavail": 9353637888,
+                        "fsroots": [
+                            "."
+                        ],
+                        "fstype": "ext4",
+                        "fsuse_percentage": "91%",
+                        "fsver": "1.0",
+                        "log_sec": 512,
+                        "mountpoint": "/",
+                        "mountpoints": [
+                            "/"
+                        ],
+                        "name": "cryptlvm",
+                        "partn": null,
+                        "parttype": null,
+                        "partuuid": null,
+                        "path": "/dev/mapper/cryptlvm",
+                        "pkname": "sda2",
+                        "pttype": null,
+                        "ptuuid": null,
+                        "rota": false,
+                        "size": "243669 MiB",
+                        "tran": null,
+                        "type": "crypt",
+                        "uuid": "341879ed-ef1a-41de-a025-8c08934ad2bf"
+                    }
+                ],
+                "fsavail": null,
+                "fsroots": [],
+                "fstype": "crypto_LUKS",
+                "fsuse_percentage": null,
+                "fsver": "2",
+                "log_sec": 512,
+                "mountpoint": null,
+                "mountpoints": [],
+                "name": "sda2",
+                "partn": 2,
+                "parttype": "0fc63daf-8483-4772-8e79-3d69d8477de4",
+                "partuuid": "34dbe489-556d-4b50-98ee-9e5d3683abf6",
+                "path": "/dev/sda2",
+                "pkname": "sda",
+                "pttype": "gpt",
+                "ptuuid": "5aff684d-d0a5-4527-ab2a-d7abecd21e8e",
+                "rota": false,
+                "size": "243685 MiB",
+                "tran": null,
+                "type": "part",
+                "uuid": "501951c6-82f7-4fb0-a93d-5098de779478"
+            }
+        ],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 512,
+        "mountpoint": null,
+        "mountpoints": [],
+        "name": "sda",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/sda",
+        "pkname": null,
+        "pttype": "gpt",
+        "ptuuid": "5aff684d-d0a5-4527-ab2a-d7abecd21e8e",
+        "rota": false,
+        "size": "244198 MiB",
+        "tran": "sata",
+        "type": "disk",
+        "uuid": null
+    },
+    {
+        "children": [
+            {
+                "children": [],
+                "fsavail": 461963264,
+                "fsroots": [
+                    "."
+                ],
+                "fstype": "vfat",
+                "fsuse_percentage": "14%",
+                "fsver": "FAT32",
+                "log_sec": 512,
+                "mountpoint": "/mnt/archinstall/boot",
+                "mountpoints": [
+                    "/mnt/archinstall/boot"
+                ],
+                "name": "sdb1",
+                "partn": 1,
+                "parttype": "c12a7328-f81f-11d2-ba4b-00a0c93ec93b",
+                "partuuid": "5839b8b1-2725-4f4e-bb99-830e6af94e2e",
+                "path": "/dev/sdb1",
+                "pkname": "sdb",
+                "pttype": "gpt",
+                "ptuuid": "f61e0ba4-55db-448e-8433-cde05e71cb3f",
+                "rota": false,
+                "size": "512 MiB",
+                "tran": null,
+                "type": "part",
+                "uuid": "7BDB-CBE2"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "fsavail": 930700685312,
+                        "fsroots": [
+                            "."
+                        ],
+                        "fstype": "ext4",
+                        "fsuse_percentage": "0%",
+                        "fsver": "1.0",
+                        "log_sec": 512,
+                        "mountpoint": "/mnt/archinstall",
+                        "mountpoints": [
+                            "/mnt/archinstall"
+                        ],
+                        "name": "ainstsdb2",
+                        "partn": null,
+                        "parttype": null,
+                        "partuuid": null,
+                        "path": "/dev/mapper/ainstsdb2",
+                        "pkname": "sdb2",
+                        "pttype": null,
+                        "ptuuid": null,
+                        "rota": false,
+                        "size": "953281 MiB",
+                        "tran": null,
+                        "type": "crypt",
+                        "uuid": "46002995-890e-4bec-8a91-ef4891b26972"
+                    }
+                ],
+                "fsavail": null,
+                "fsroots": [],
+                "fstype": "crypto_LUKS",
+                "fsuse_percentage": null,
+                "fsver": "2",
+                "log_sec": 512,
+                "mountpoint": null,
+                "mountpoints": [],
+                "name": "sdb2",
+                "partn": 2,
+                "parttype": "0fc63daf-8483-4772-8e79-3d69d8477de4",
+                "partuuid": "cc8186e0-b3b2-42bb-812b-e6d6b46efb54",
+                "path": "/dev/sdb2",
+                "pkname": "sdb",
+                "pttype": "gpt",
+                "ptuuid": "f61e0ba4-55db-448e-8433-cde05e71cb3f",
+                "rota": false,
+                "size": "953297 MiB",
+                "tran": null,
+                "type": "part",
+                "uuid": "32ef1b41-aee3-4b25-94e0-e8bb946f2fed"
+            }
+        ],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 512,
+        "mountpoint": null,
+        "mountpoints": [],
+        "name": "sdb",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/sdb",
+        "pkname": null,
+        "pttype": "gpt",
+        "ptuuid": "f61e0ba4-55db-448e-8433-cde05e71cb3f",
+        "rota": false,
+        "size": "953869 MiB",
+        "tran": "usb",
+        "type": "disk",
+        "uuid": null
+    },
+    {
+        "children": [],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 4096,
+        "mountpoint": "[SWAP]",
+        "mountpoints": [
+            "[SWAP]"
+        ],
+        "name": "zram0",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/zram0",
+        "pkname": null,
+        "pttype": null,
+        "ptuuid": null,
+        "rota": false,
+        "size": "4096 MiB",
+        "tran": null,
+        "type": "disk",
+        "uuid": null
+    }
+]

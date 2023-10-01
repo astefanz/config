@@ -21,12 +21,15 @@ connected externally.
 pacman -S archinstall
 ```
 
+Saved `archinstall` configuration in this repository's `archinstall/` directory.
+
+
 #### From LS video
 
 - Install `extra/arch-install-scripts`
 > `lsblk` to look for target disk
 
-> `ls /sys/firmware/efi/efivars` and if something comes out, you are in a
+> `ls /sys/firmware/efi/efivars` and if something comes out you are in a
 > UEFI system, instead of a legacy boot system.
 
 
@@ -123,6 +126,8 @@ libxinerama libxft # <- for dwm
 [pipewire]
 
 # Networking
+networkmanager
+nm-connection-editor
 [network drivers (NetworkManager)]
 
 # For future installations
