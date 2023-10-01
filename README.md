@@ -8,6 +8,8 @@ I use this repository to iterate on my computing setup.
 
 # Installation 2023.09.30.6
 
+hello from chrooted pilot@dakota
+
 Started using Luke Smith's *Install Artix or Arch Linux (Encrypted system)* video
 https://www.youtube.com/watch?v=dI3bGeT31Bo
 
