@@ -25,6 +25,13 @@ pacman -S archinstall
 
 Saved `archinstall` configuration in this repository's `archinstall/` directory.
 
+#### You can download the Arch wiki
+```bash
+sudo pacman -S arch-wiki-lite # for terminal
+sudo pacman -S arch-wiki-docs # For HTML version
+# Access HTML version by opening /usr/share/arch-wiki/html/en/Main_page.html
+```
+
 
 #### From LS video
 
@@ -116,10 +123,15 @@ man-pages man-db texinfo openssh openssl lvm2
 git base-devel
 neovim zsh rsync htop
 zip unzip gnupg
+arch-wiki-lite
+arch-wiki-docs
+lynx
+xdg-tools
 
 # Graphics
 [xorg and video drivers]
 xorg xorg-xinit
+xwallpaper xdotool xcape
 
 arandr ttf-inconsolata ttf-linux-libertine ttf-dejavu
 libxinerama libxft # <- for dwm
