@@ -4,7 +4,33 @@ Personal configuration files and provisioning scripts. I use Arch btw.
 Based on Arch Linux, inspired by Luke Smith's [LARBS](larbs.xyz) and heavily reliant on [suckless.org](https://suckless.org).
 
 I use this repository to iterate on my computing setup.
+***
 
+# Installation 2023.09.30.6
+
+Started using Luke Smith's *Install Artix or Arch Linux (Encrypted system)* video
+https://www.youtube.com/watch?v=dI3bGeT31Bo
+
+Installing off of existing `mango@dakota` installation, into a new drive.
+
+Decided to try `archinstall` off of `mango@dakota` Arch into a new drive,
+connected externally.
+
+```bash
+# Reinstall archinstall because the default one is no good
+pacman -S archinstall
+```
+
+#### From LS video
+
+- Install `extra/arch-install-scripts`
+> `lsblk` to look for target disk
+
+> `ls /sys/firmware/efi/efivars` and if something comes out, you are in a
+> UEFI system, instead of a legacy boot system.
+
+
+***
 # New System Setup
 
 https://wiki.archlinux.org/title/installation_guide
@@ -101,6 +127,15 @@ libxinerama libxft # <- for dwm
 
 # For future installations
 archinstall arch-install-scripts pam-u2f
+
+# Tools (1)
+python #and packages
+[jupyter notebook]
+
+# Tools (2)
+krita inkscape blender docker yt-dlp brave-browser firefox freecad # [...]
+arduino
+
 ```
 
 
