@@ -6,6 +6,13 @@ Based on Arch Linux, inspired by Luke Smith's [LARBS](larbs.xyz) and heavily rel
 I use this repository to iterate on my computing setup.
 ***
 
+# Installation 2023.10.02.1
+
+Last installation broke when I moved the SSD into my laptop.
+
+I retried the same thing but with GRUB as bootloader. It still breaks, but telling GRUB to start using
+fallback initramfs from Advanced Options works.
+
 # Installation 2023.09.30.6
 
 hello from chrooted pilot@dakota
@@ -130,14 +137,15 @@ xdg-tools
 
 # Graphics
 [xorg and video drivers]
-xorg xorg-xinit
-xwallpaper xdotool xcape
+xorg xorg-xinit xorg-server
+xwallpaper xdotool xcape arandr
 
 arandr ttf-inconsolata ttf-linux-libertine ttf-dejavu
 libxinerama libxft # <- for dwm
 
 # Sound
-[pipewire]
+pipewire
+[pipewire packages]
 
 # Networking
 networkmanager
