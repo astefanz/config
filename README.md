@@ -13,6 +13,15 @@ Last installation broke when I moved the SSD into my laptop.
 I retried the same thing but with GRUB as bootloader. It still breaks, but telling GRUB to start using
 fallback initramfs from Advanced Options works.
 
+#### Touchpad setup
+Install the `xf86-input-synaptics` package:
+```bash
+synclient # to see current settings
+synclient TapButton1=1 # tap-to-click for left click
+synclient TapButton2=3 # tap-to-click for right click with two fingers 
+# (finger vertical scrolling came enabled by default after installing the package)
+```
+
 # Installation 2023.09.30.6
 
 hello from chrooted pilot@dakota
@@ -139,9 +148,12 @@ xdg-tools
 [xorg and video drivers]
 xorg xorg-xinit xorg-server
 xwallpaper xdotool xcape arandr
+xf86-input-synaptics
 
 arandr ttf-inconsolata ttf-linux-libertine ttf-dejavu
 libxinerama libxft # <- for dwm
+
+scrot # screenshots
 
 # Sound
 pipewire
@@ -370,3 +382,45 @@ xrandr # find name of laptop display. For me it's eDP1
 xinput map-to-output  9 eDP1 # Fix finger touch
 xinput map-to-output 13 eDP1 # Fix pen touch
 ```
+[?25l[?7l[0m[36m[1m                   -`
+                  .o+`
+                 `ooo/
+                `+oooo:
+               `+oooooo:
+               -+oooooo+:
+             `/:-:++oooo+:
+            `/++++/+++++++:
+           `/++++++++++++++:
+          `/+++o[0m[36m[1moooooooo[0m[36m[1moooo/`
+[0m[36m[1m         [0m[36m[1m./[0m[36m[1mooosssso++osssssso[0m[36m[1m+`
+[0m[36m[1m        .oossssso-````/ossssss+`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        +ssssooo/-
+   `/ossssso+/:-        -:/+osssso+-
+  `+sso+:-`                 `.-/+oso:
+ `++:.                           `-/+/
+ .`                                 `/[0m
+[19A[9999999D[41C[0m[1m[36m[1mpilot[0m@[36m[1mdakota[0m 
+[41C[0m------------[0m 
+[41C[0m[36m[1mOS[0m[0m:[0m Arch Linux x86_64[0m 
+[41C[0m[36m[1mHost[0m[0m:[0m LIFEBOOK P728[0m 
+[41C[0m[36m[1mKernel[0m[0m:[0m 6.5.5-arch1-1[0m 
+[41C[0m[36m[1mUptime[0m[0m:[0m 11 mins[0m 
+[41C[0m[36m[1mPackages[0m[0m:[0m 473 (pacman)[0m 
+[41C[0m[36m[1mShell[0m[0m:[0m bash 5.1.16[0m 
+[41C[0m[36m[1mResolution[0m[0m:[0m 1920x1080[0m 
+[41C[0m[36m[1mWM[0m[0m:[0m dwm[0m 
+[41C[0m[36m[1mTheme[0m[0m:[0m Adwaita [GTK3][0m 
+[41C[0m[36m[1mIcons[0m[0m:[0m Adwaita [GTK3][0m 
+[41C[0m[36m[1mTerminal[0m[0m:[0m st[0m 
+[41C[0m[36m[1mTerminal Font[0m[0m:[0m Liberation Mono[0m 
+[41C[0m[36m[1mCPU[0m[0m:[0m Intel i7-8650U (8) @ 4.200GHz[0m 
+[41C[0m[36m[1mGPU[0m[0m:[0m Intel UHD Graphics 620[0m 
+[41C[0m[36m[1mMemory[0m[0m:[0m 726MiB / 15828MiB[0m 
+
+[41C[30m[40m   [31m[41m   [32m[42m   [33m[43m   [34m[44m   [35m[45m   [36m[46m   [37m[47m   [m
+[41C[38;5;8m[48;5;8m   [38;5;9m[48;5;9m   [38;5;10m[48;5;10m   [38;5;11m[48;5;11m   [38;5;12m[48;5;12m   [38;5;13m[48;5;13m   [38;5;14m[48;5;14m   [38;5;15m[48;5;15m   [m
+
+
+[?25h[?7h
