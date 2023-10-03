@@ -5,7 +5,7 @@ Based on Arch Linux, inspired by Luke Smith's [LARBS](larbs.xyz) and heavily rel
 
 I use this repository to iterate on my computing setup.
 ***
-
+```
 
                    -`                    pilot@dakota 
                   .o+`                   ------------ 
@@ -26,7 +26,7 @@ I use this repository to iterate on my computing setup.
   `+sso+:-`                 `.-/+oso:
  `++:.                           `-/+/
  .`                                 `/  
-
+```
 
 # Installation 2023.10.02.1
 
