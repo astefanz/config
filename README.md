@@ -24,8 +24,8 @@ I use this repository to iterate on my computing setup.
      /ossssssss/        +ssssooo/-       GPU: Intel UHD Graphics 620 
    `/ossssso+/:-        -:/+osssso+-     Memory: 852MiB / 15828MiB 
   `+sso+:-`                 `.-/+oso:
- `++:.                           `-/+/                           
- .`                                 `/                           
+ `++:.                           `-/+/
+ .`                                 `/  
 
 
 # Installation 2023.10.02.1
