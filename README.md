@@ -44,6 +44,22 @@ synclient TapButton2=3 # tap-to-click for right click with two fingers
 # (finger vertical scrolling came enabled by default after installing the package)
 ```
 
+#### Bluetooth
+See https://wiki.archlinux.org/title/Bluetooth
+```bash
+# Assuming bluez and bluez-utils are installed (pacman)
+# Enable daemon:
+systemctl enable bluetooth.service
+systemctl start bluetooth.service
+
+# Use CLI to pair to devices:
+bluetoothctl
+# (in CLI:)
+scan on
+# (find MAC address of your device)
+pair MAC_ADDRESS_OF_DEVICE
+```
+
 # Installation 2023.09.30.6
 
 hello from chrooted pilot@dakota
@@ -180,6 +196,9 @@ scrot # screenshots
 # Sound
 pipewire
 [pipewire packages]
+
+# Bluetooth
+bluez bluez-util
 
 # Networking
 networkmanager
