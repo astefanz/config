@@ -60,6 +60,16 @@ scan on
 pair MAC_ADDRESS_OF_DEVICE
 ```
 
+#### Install `yay` and AUR
+See: makeuseof.com/install-and-use-yay-arch-linux/
+```bash
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+```
+
 # Installation 2023.09.30.6
 
 hello from chrooted pilot@dakota
@@ -209,8 +219,13 @@ nm-connection-editor
 archinstall arch-install-scripts pam-u2f
 
 # Tools (1)
-python #and packages
-[jupyter notebook]
+jupyter-notebook
+python-numpy
+python-pandas
+python-matplotlib
+python-scikit-learn
+python-pytorch # why tf is this 5GB
+
 
 # Tools (2)
 krita inkscape blender docker yt-dlp brave-browser firefox freecad # [...]
