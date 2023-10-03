@@ -80,6 +80,7 @@ sudo usermod -aG uucp $USER
 ```
 
 #### Dark theme
+The approach below is very bloated. Streamline this in the future
 ```bash
 # Assuming lxappearance is installed
 # Assuming yay is set up
@@ -87,6 +88,12 @@ yay yaru-gtk-theme
 yay yaru-icon-theme
 yay xcursor-breeze
 # Set these using lxappearance
+```
+
+#### Set timezone
+```bash
+timedatectl list-timezones # To view options
+sudo timedatectl set-timezone America/Los_Angeles
 ```
 
 # Installation 2023.09.30.6
