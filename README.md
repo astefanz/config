@@ -210,6 +210,7 @@ arch-wiki-docs
 lynx
 wget
 xdg-tools
+gparted
 
 # Graphics
 [xorg and video drivers]
@@ -218,6 +219,8 @@ xwallpaper xdotool xcape arandr
 xf86-input-synaptics
 lxappearance
 pcmanfm # file manager
+
+slock
 
 arandr ttf-inconsolata ttf-linux-libertine ttf-dejavu
 libxinerama libxft # <- for dwm
@@ -250,10 +253,12 @@ python-gpgme
 
 # Tools (2)
 krita inkscape blender docker yt-dlp brave-browser firefox freecad # [...]
-arduino
 
+# Tools (3)
+dolphin-emu
+virtualbox # with virtualbox-host-modules-arch 
+virtualbox-guest-iso
 ```
-
 
 
 # Post-installation tasks
