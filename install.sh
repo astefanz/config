@@ -9,7 +9,7 @@
 # - setup repository utilities
 #
 
-UTILS_DIR="$HOME/.bin/"
+UTILS_DIR="$HOME/.local/bin/"
 RCFILE="$HOME/.bashrc"
 
 # Intro
