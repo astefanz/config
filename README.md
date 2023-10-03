@@ -67,7 +67,26 @@ sudo pacman -S --needed base-devel git
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+```
 
+#### Arduino IDE
+See https://wiki.archlinux.org/title/Arduino
+
+Install `arduino-ide-bin` for 2.x release of the IDE **using `yay`, not `pacman`**
+
+Add user to the `uucp` group for serial access:
+```bash
+sudo usermod -aG uucp $USER
+```
+
+#### Dark theme
+```bash
+# Assuming lxappearance is installed
+# Assuming yay is set up
+yay yaru-gtk-theme
+yay yaru-icon-theme
+yay xcursor-breeze
+# Set these using lxappearance
 ```
 
 # Installation 2023.09.30.6
@@ -136,7 +155,6 @@ ping archlinux.org
 ```
 
 
-
 ##### Confirm the clock is synchronized
 
 Will happen automatically when online
@@ -190,6 +208,7 @@ zip unzip gnupg
 arch-wiki-lite
 arch-wiki-docs
 lynx
+wget
 xdg-tools
 
 # Graphics
@@ -197,6 +216,8 @@ xdg-tools
 xorg xorg-xinit xorg-server
 xwallpaper xdotool xcape arandr
 xf86-input-synaptics
+lxappearance
+pcmanfm # file manager
 
 arandr ttf-inconsolata ttf-linux-libertine ttf-dejavu
 libxinerama libxft # <- for dwm
@@ -225,7 +246,7 @@ python-pandas
 python-matplotlib
 python-scikit-learn
 python-pytorch # why tf is this 5GB
-
+python-gpgme
 
 # Tools (2)
 krita inkscape blender docker yt-dlp brave-browser firefox freecad # [...]
