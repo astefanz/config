@@ -235,8 +235,8 @@ libxinerama libxft # <- for dwm
 scrot # screenshots
 
 # Sound
-pipewire
-[pipewire packages]
+pipewire [pipewire packages]
+pulsemixer # for volume
 
 # Bluetooth
 bluez bluez-util
