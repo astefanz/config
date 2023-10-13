@@ -21,6 +21,10 @@ echo "** Installing custom utilities **"
 mkdir -p $UTILS_DIR
 echo "Copying custom utilities to $UTILS_DIR"
 cp -r ./bin/* $UTILS_DIR
-echo "Adding $UTILS_DIR to PATH in $RCFILE"
-echo "export PATH=\"$UTILS_DIR:$PATH\"" >> $RCFILE
-source $RCFILE
+if [[ ":$PATH:" == *":$UTILS_DIR:"* ]]; then
+	echo "$UTILS_DIR already in PATH"
+else
+	echo "Adding $UTILS_DIR to PATH in $RCFILE"
+	echo "export PATH=\"$UTILS_DIR:$PATH\"" >> $RCFILE
+	source $RCFILE
+fi

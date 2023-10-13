@@ -1,0 +1,49 @@
+#!/bin/sh
+# nb notes: Record thoughts by appending them to a dedicated
+# notes file
+#
+# TODO: Generalize to different kinds of thoughts and files to append
+
+rcfile=~/.bashrc
+
+NBDIR_DEFAULT=$HOME/Dropbox/Notes/
+NBFILENAME_DEFAULT=nb.md
+
+# Define variables
+if [[ -z $NBDIR ]]; then
+	echo "Notes file environment variables not set. Adding to $rcfile"
+	echo "export NBDIR=$NBDIR_DEFAULT" >> $rcfile
+	echo "export NBFILENAME=$NBFILENAME_DEFAULT" >> $rcfile
+	echo "export NBPATH=\$NBDIR/\$NBFILENAME" >> $rcfile
+	source $rcfile
+	echo "Done. Retry"
+	exit 1
+fi
+
+if [ ! -d "$NBDIR" ]; then
+	echo "Directory $NBDIR not found"
+	mkdir -p $NBDIR
+	echo "Directory created"
+fi
+
+if [ $# -eq 1 ]; then
+	echo $1 >> $NBPATH
+	echo "" >> $NBPATH
+	echo "Note recorded"
+elif [ $# -eq 0 ]; then
+	editor=$EDITOR
+	if [[ -z $EDITOR ]]; then
+		editor=vim
+	fi
+	$editor $NBPATH
+else
+
+	echo "Usage:"
+	echo "To edit notes file with \$EDITOR ($EDITOR) or vim"
+	echo "\t:0"
+	echo "To append a note:"
+	echo "\t:0 \"note to record\""
+	echo "Appends given note to $NBPATH"
+fi
+
+
