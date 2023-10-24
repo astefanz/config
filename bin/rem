@@ -4,7 +4,7 @@
 REMFILE=~/.rem.txt
 
 if ! [[ -e $REMFILE ]]; then
-	echo "*" > $REMFILE
+	echo " " > $REMFILE
 	echo "$REMFILE created"
 fi
 
