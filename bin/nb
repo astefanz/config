@@ -26,7 +26,15 @@ if [ ! -d "$NBDIR" ]; then
 	echo "Directory created"
 fi
 
+# If the file has not been edited today, add a datestamp
+if [[ "$(stat $NBPATH -c %y)" != *"$(date +%F)"* ]]; then
+	echo "# $(date +%F)" >> $NBPATH
+	echo "" >> $NBPATH
+fi
+
 if [ $# -eq 1 ]; then
+	
+
 	echo $1 >> $NBPATH
 	echo "" >> $NBPATH
 	echo "Note recorded"

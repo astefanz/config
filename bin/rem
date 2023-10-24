@@ -1,0 +1,21 @@
+#!/bin/sh
+# rem: add reminder
+
+REMFILE=~/.rem.txt
+
+if ! [[ -e $REMFILE ]]; then
+	echo "*" > $REMFILE
+	echo "$REMFILE created"
+fi
+
+if [ $# -eq 0 ]; then
+	tail -n 1 $REMFILE
+
+elif [ $# -eq 1 ]; then
+	echo $1 >> $REMFILE
+	echo "Reminder added: \"$($0)\""
+else
+	echo "Usage:"
+	echo "    $0 # to get last reminder"
+	echo "    $0 \"reminder to add\" # to add a reminder"
+fi
