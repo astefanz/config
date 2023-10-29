@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+# Shortcut to screenshot and copy selection
+scrot -s

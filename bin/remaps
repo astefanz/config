@@ -16,3 +16,4 @@ xset -q | grep -q "Caps Lock:\s*on" && xdotool key Caps_Lock
 # Touchpad
 synclient TapButton1=1 # tap-to-click for left click
 synclient TapButton2=3 # tap-to-click for right click with two fingers 
+synclient HorizTwoFingerScroll=1 # enable two finger horizontal scrolling
