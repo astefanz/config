@@ -265,6 +265,10 @@ krita inkscape blender docker yt-dlp brave-browser firefox freecad # [...]
 dolphin-emu
 virtualbox # with virtualbox-host-modules-arch 
 virtualbox-guest-iso
+
+android-tools
+android-udev
+
 ```
 
 
