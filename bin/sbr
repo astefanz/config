@@ -1,0 +1,16 @@
+#!/bin/sh
+# sbr - random soundbite (see sb)
+# Takes a random soundbite from $SBFILENAME, which is assumed to
+# have been created by sb
+#
+# TO DO: generalize this
+
+FILE=$SBPATH
+
+if [ -e $FILE ]; then
+	n_lines=$(grep -c ^ $FILE)
+	k=$((1 + $RANDOM % $n_lines))
+	sed -n "${k}p" $FILE 
+else
+	echo "Target file $FILE not found"
+fi
