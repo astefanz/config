@@ -1,0 +1,14 @@
+#!/bin/sh
+# Helper script to show volume status in dwm header
+
+prefix="  VOL:"
+ans=" ?? "
+suffix=" "
+
+if [[ 1 -eq $(pulsemixer --get-mute) ]] then
+	ans="MUTE"
+else
+	volarray=($(pulsemixer --get-volume))
+	ans="  ${volarray[0]}"
+fi
+echo "$prefix$ans$suffix"
