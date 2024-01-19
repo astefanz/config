@@ -1,0 +1,20 @@
+#!/bin/env python3
+# remap pen and touch sensor to 2-in-1 laptop screen when there's a monitor
+# see tscreen_dakota script
+import subprocess as sub
+
+print("Remapping touch input to 2-in-1 monitor (hardcoded for dakota)")
+output = sub.check_output(['xinput']).decode('utf-8') # get tree of inputs
+output = output.split("Virtual core keyboard")[0]
+wacom = [line for line in output.split('\n') if 'Wacom' in line]
+
+MONITOR='eDP1' # FIXME hardcoded monitor - use 'xrandr' to find monitors
+
+# TODO add "keyboard" too
+for line in wacom:
+	device_id = int(line.split('id=')[1].split()[0])
+	print("Remapping id %d from:\n %s"%(device_id, line))
+	sub.check_output(['xinput', 'map-to-output', str(device_id), MONITOR])
+
+print("Done")
+

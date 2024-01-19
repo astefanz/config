@@ -1,12 +1,14 @@
 # setup
+
 Personal configuration files and provisioning scripts. I use Arch btw.
 
 Based on Arch Linux, inspired by Luke Smith's [LARBS](larbs.xyz) and heavily reliant on [suckless.org](https://suckless.org).
 
 I use this repository to iterate on my computing setup.
-***
-```
 
+***
+
+```
                    -`                    pilot@dakota 
                   .o+`                   ------------ 
                  `ooo/                   OS: Arch Linux x86_64 
@@ -36,7 +38,9 @@ I retried the same thing but with GRUB as bootloader. It still breaks, but telli
 fallback initramfs from Advanced Options works.
 
 #### Touchpad setup
+
 Install the `xf86-input-synaptics` package:
+
 ```bash
 synclient # to see current settings
 synclient TapButton1=1 # tap-to-click for left click
@@ -45,7 +49,9 @@ synclient TapButton2=3 # tap-to-click for right click with two fingers
 ```
 
 #### Bluetooth
+
 See https://wiki.archlinux.org/title/Bluetooth
+
 ```bash
 # Assuming bluez and bluez-utils are installed (pacman)
 # Enable daemon:
@@ -61,7 +67,9 @@ pair MAC_ADDRESS_OF_DEVICE
 ```
 
 #### Install `yay` and AUR
+
 See: makeuseof.com/install-and-use-yay-arch-linux/
+
 ```bash
 sudo pacman -S --needed base-devel git
 git clone https://aur.archlinux.org/yay.git
@@ -70,17 +78,21 @@ makepkg -si
 ```
 
 #### Arduino IDE
+
 See https://wiki.archlinux.org/title/Arduino
 
 Install `arduino-ide-bin` for 2.x release of the IDE **using `yay`, not `pacman`**
 
 Add user to the `uucp` group for serial access:
+
 ```bash
 sudo usermod -aG uucp $USER
 ```
 
 #### Dark theme
+
 The approach below is very bloated. Streamline this in the future
+
 ```bash
 # Assuming lxappearance is installed
 # Assuming yay is set up
@@ -91,6 +103,7 @@ yay xcursor-breeze
 ```
 
 #### Set timezone
+
 ```bash
 timedatectl list-timezones # To view options
 sudo timedatectl set-timezone America/Los_Angeles
@@ -116,23 +129,24 @@ pacman -S archinstall
 Saved `archinstall` configuration in this repository's `archinstall/` directory.
 
 #### You can download the Arch wiki
+
 ```bash
 sudo pacman -S arch-wiki-lite # for terminal
 sudo pacman -S arch-wiki-docs # For HTML version
 # Access HTML version by opening /usr/share/arch-wiki/html/en/Main_page.html
 ```
 
-
 #### From LS video
 
 - Install `extra/arch-install-scripts`
-> `lsblk` to look for target disk
+  
+  > `lsblk` to look for target disk
 
 > `ls /sys/firmware/efi/efivars` and if something comes out you are in a
 > UEFI system, instead of a legacy boot system.
 
-
 ***
+
 # New System Setup
 
 https://wiki.archlinux.org/title/installation_guide
@@ -161,7 +175,6 @@ ip link
 ping archlinux.org
 ```
 
-
 ##### Confirm the clock is synchronized
 
 Will happen automatically when online
@@ -185,11 +198,12 @@ while ! systemctl show pacman-init.service | grep SubState=exited; do
     sleep 1
 done
 ```
+
 #### Update keyring
+
 ```bash
 pacman -Sy archlinux-keyring
 ```
-
 
 #### Install with `archinstall`
 
@@ -226,8 +240,11 @@ xwallpaper xdotool xcape arandr
 xf86-input-synaptics
 lxappearance
 pcmanfm # file manager
-
+xclip
+xcompmgr
 slock
+
+conky
 
 arandr ttf-inconsolata ttf-linux-libertine ttf-dejavu
 libxinerama libxft # <- for dwm
@@ -259,6 +276,7 @@ python-pytorch # why tf is this 5GB
 python-gpgme
 
 # Tools (2)
+marktext
 krita inkscape blender docker yt-dlp brave-browser firefox freecad # [...]
 
 # Tools (3)
@@ -268,9 +286,7 @@ virtualbox-guest-iso
 
 android-tools
 android-udev
-
 ```
-
 
 # Post-installation tasks
 
@@ -289,18 +305,15 @@ git clone git@github.com:astefanz/st.git
 git clone git@github.com:astefanz/dmenu.git
 ```
 
-
-
 ### Setup graphical environment
+
 Install Xorg packages, `dwm` dependencies and fonts
 May also have been installed in the `archinstall` step
+
 ```bash
 pacman -S xorg xorg-xinit libxinerama libxft ttf-inconsolata ttf-linux-libertine \
     ttf-dejavu
-
 ```
-
-
 
 #### Post-setup packages (user level)
 
@@ -323,12 +336,14 @@ yt-dlp ffmpeg
 # Software tools:
 krita blender freecad inkscape xournalpp brave [firefox or librewolf]
 [email and calendar] [music] vlc
-
 ```
+
 ## Setup scripts
+
 [...]
 
 ***
+
 # Other stuff
 
 ### Other things
@@ -358,51 +373,70 @@ Set `zsh` as shell
 
 Give it a `home` directory etc.
 
-
-
 # Things to figure out to make this usable
 
 - lock screen with timeout and shortcut
 - decryption screen that isn't trash with P728
 - (~) backups and data synchronization
 
-
 # Things to figure out
 
 - .vimrc and nvim packages, mine and LS
+
 - zsh configuration files
+
 - /etc/sudoers
 
 - Backups
+
 - Decryption and login that isn't trash
+
 - Automatic lock
+
 - Sound and bluetooth
+
 - Touchscreen and graphics drivers
+
 - Automatically deal with new monitors and remember old ones
+
 - Calibrate touchscreen to not be trash when a monitor is connected
+
 - Compartmentalization
+
 - FoSS Virtualization
+
 - Videogame emulation
+
 - Torrenting
+
 - My Vim configs. `vim` vs `nvim`?
+
 - How to download videos and convert videos and audio.. and trim audio
+
 - How to burn audio CDs
+
 - What to take from LS configs
-    - `remaps`
-    - `setbg`
+  
+  - `remaps`
+  - `setbg`
+
 - Email and Calendar with synchronization and backups
+
 - Put everything in provisioning scripts
+
 - Fonts
+
 - rEFInd? What is the most secure possible way to encrypt a laptop drive?
+
 - How to download documentation esp. Wikipedia, Arch Wiki and Stack Exchange
+
 - Searx, integrated with my own archives
+
 - Refactor storage and make Dropbox and iCloud obsolete
+
 - Layered encryption
+
 - New encryption scheme
-
-
-
-
 
 # Repositories to fork
 
@@ -418,11 +452,10 @@ st
 
 larbs
 
-
-
 ***
 
 ### Archiving
+
 - Consider `git-annex`: https://git-annex.branchable.com/install/
 - But `rsync` will probably do
 - Use Git for writing and code
@@ -434,23 +467,17 @@ larbs
 
 https://stackoverflow.com/questions/4468447/how-to-download-source-code-with-pacman-on-arch-linux
 
-
-
 ### Security
 
 - https://wiki.archlinux.org/title/Data-at-rest_encryption
 - https://wiki.archlinux.org/title/List_of_applications/Security#Privilege_elevation
 - https://wiki.archlinux.org/title/General_recommendations
 
-
-
 ### `nvim` is better than `vim`
 
 https://www.baeldung.com/linux/vim-vs-neovim
 
 https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-
-
 
 ### Simple pomodoro timing
 
@@ -467,7 +494,9 @@ sleep 1500 && zenity --warning --text="25 minutes passed"
 ```
 
 ### Remapping pen and touch sensor to laptop screen with multiple monitors
+
 https://askubuntu.com/questions/51445/
+
 ```bash
 # For "dakota" Fujitsu P728
 xinput # find id of input device. For me it's 13 for pen and 9 for finger

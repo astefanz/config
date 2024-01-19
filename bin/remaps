@@ -9,8 +9,8 @@ xset r rate 300 50
 setxkbmap -option ctrl:nocaps,altwin:menu_win
 # Swap alt and super
 setxkbmap -option altwin:swap_alt_win
-# When caps lock is pressed only once, treat it as escape.
-killall xcape 2>/dev/null ; xcape -e 'Control_L=Escape'
+# (nvm) When caps lock is pressed only once, treat it as escape.
+# killall xcape 2>/dev/null ; xcape -e 'Control_L=Escape'
 # Turn off caps lock if on since there is no longer a key for it.
 xset -q | grep -q "Caps Lock:\s*on" && xdotool key Caps_Lock
 # Touchpad
