@@ -1,0 +1,20 @@
+#!/bin/sh
+#dmenu_add: dmenu_prompt for my notetaking shellscript 'add'
+
+# check if there are arguments to forward to dmenu
+if [ "$#" -gt 0 ]; then
+  shift 0 # https://stackoverflow.com/questions/1537673
+else
+  echo "no arguments for dmenu"
+fi
+
+# get soundbite from dmenu prompt
+txt=$(echo "" | dmenu "$@" -p "add:")
+
+# check for nonempty soundbite and pass it to add if so
+# https://unix.stackexchange.com/questions/146942/
+if [[ $txt = *[^[:space:]]* ]]; then
+  add "$txt"
+else
+  echo "no soundbite received"
+fi
