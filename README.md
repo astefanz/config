@@ -287,6 +287,12 @@ virtualbox-guest-iso
 android-tools
 android-udev
 ```
+## Install after
+```
+# yay:
+nvchad
+
+```
 
 # Post-installation tasks
 
