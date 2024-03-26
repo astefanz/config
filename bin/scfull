@@ -1,0 +1,4 @@
+#!/bin/sh
+# Shortcut to screenshot and copy entire screen
+# https://unix.stackexchange.com/questions/623516/
+scrot -e 'xclip -selection clipboard -t image/png -i $f'

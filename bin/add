@@ -1,0 +1,39 @@
+#!/bin/sh
+# sb - soundbites: Record thoughts by appending them to a dedicated
+# soundbites file
+#
+# TODO: Print random soundbite when called without arguments
+# TODO: Generalize to different kinds of thoughts and files to append
+
+rcfile=~/.bashrc
+# Define variables
+if [[ -z $SBDIR ]]; then
+	echo "Soundbite file environment variables not set. Adding to $rcfile"
+	echo "export SBDIR=~/Dropbox/Notes/soundbites/" >> $rcfile
+	echo "export SBFILENAME=soundbites.txt" >> $rcfile
+	echo "export SBPATH=\$SBDIR/\$SBFILENAME" >> $rcfile
+	source $rcfile
+	echo "Done. Retry"
+	exit 1
+fi
+
+if [ ! -d "$SBDIR" ]; then
+	echo "Directory $SBDIR not found"
+	mkdir -p $SBDIR
+	echo "Directory created"
+fi
+
+if [ $# -eq 1 ]; then
+  echo "$(date +%Y.%m.%d~%H%M:) $1" >> $SBPATH
+	echo "Soundbite added"
+else
+	if [ $# -eq 0 ]; then
+		cat $SBPATH
+		echo ""
+	fi
+
+	echo "Usage: $0 \"soundbite to record\""
+	echo "Appends given soundbite to $SBPATH"
+fi
+
+
