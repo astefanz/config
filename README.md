@@ -221,7 +221,7 @@ archinstall --config user_configuration.json
 ```bash
 ## TO INSTALL WITH ARCHINSTALL
 # Critical
-neofetch figlet
+neofetch figlet lolcat
 man-pages man-db texinfo openssh openssl lvm2
 git base-devel
 neovim zsh rsync htop
